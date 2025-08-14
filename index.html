@@ -1217,8 +1217,6 @@
             transform: rotate(15deg);
         }
 
-
-
         .why-choose {
             background-color: white;
             color: var(--accent-color);
@@ -1491,6 +1489,86 @@
             }
         }
 
+        /* Extra small screen fixes (below 400px) */
+        @media (max-width: 400px) {
+            .hero {
+                padding-top: 90px; /* Reduced padding to prevent text under navbar */
+                height: auto;
+                min-height: 100vh;
+            }
+            
+            .hero-content {
+                padding: 20px 0;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+                margin-top: 20px;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .accolade h3 {
+                font-size: 1.1rem;
+            }
+            
+            .accolade p {
+                font-size: 0.8rem;
+            }
+            
+            .quote-content h2 {
+                font-size: 2rem;
+            }
+            
+            .quote-content h3 {
+                font-size: 1.4rem;
+            }
+            
+            .quote-form {
+                padding: 25px;
+            }
+            
+            .why-title {
+                font-size: 1rem;
+            }
+            
+            .why-heading {
+                font-size: 1.1rem;
+            }
+            
+            .why-heading span {
+                font-size: 0.9rem;
+            }
+            
+            .why-content {
+                font-size: 0.9rem;
+            }
+            
+            .stats-grid-mobile {
+                grid-template-columns: 1fr;
+                max-width: 300px;
+            }
+            
+            .process-step {
+                min-width: 100%;
+                padding: 30px 20px;
+            }
+            
+            .project-info h3 {
+                font-size: 1.2rem;
+            }
+            
+            .project-info p {
+                font-size: 0.9rem;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         .logo-container {
             display: inline-block;
             border-radius: 20px; /* Custom shape */
@@ -1755,7 +1833,7 @@
                 
                 <div class="service-card fade-in">
                     <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Wardrobe Design">
+                        <img src="https://tse3.mm.bing.net/th/id/OIP.-4xA0BwHpXF9xvQrZCM-7gHaFY?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Wardrobe Design">
                     </div>
                     <div class="service-content">
                         <div class="service-icon">
@@ -1984,7 +2062,7 @@
     </section>
 
     <!-- Crafting Spaces Section -->
-    <section class="crafting-spaces">
+    <!-- <section class="crafting-spaces">
         <div class="crafting-container">
             <h2 class="fade-in">Crafting Spaces</h2>
             <h3 class="fade-in">Our Home Interior Design Journey</h3>
@@ -2006,7 +2084,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
      <!-- Testimonials Section -->
     <section class="testimonials" id="testimonials">
         <div class="container">
@@ -2084,7 +2162,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <h3>Luxury Interiors</h3>
+                    <h3>Sukra Interiors</h3>
                     <p>Creating exceptional living spaces with premium interior design solutions that combine timeless design, comfort, and quality craftsmanship.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
