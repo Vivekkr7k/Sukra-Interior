@@ -108,15 +108,26 @@
             left: 0;
             width: 100%;
             z-index: 1000;
-            background-color: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            background-color: transparent; /* transparent at top */
+            box-shadow: none;
             transition: var(--transition);
             padding: 15px 0;
         }
 
+        /* When user scrolls, add a subtle opaque background for readability */
         header.scrolled {
             padding: 10px 0;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.95);
+        }
+
+        /* Make nav items readable on top of hero when header is transparent */
+        header:not(.scrolled) .nav-menu a {
+            color: #fff;
+        }
+
+        header:not(.scrolled) .hamburger {
+            color: #fff;
         }
 
         .header-container {
@@ -1616,7 +1627,7 @@
     <div class="container header-container">
         <!-- Replace text logo with image logo -->
         <a href="#" class="logo">
-            <img src="ASSETS/sakura logo.jpeg" alt="Luxury Interiors" class="logo-img">
+            <img src="ASSETS/sakura_logo.png" alt="Luxury Interiors" class="logo-img">
         </a>
         
         <div class="hamburger">
@@ -1639,7 +1650,7 @@
         <div class="container">
             <div class="hero-content">
                 <h1>Get Instant Quotes with No Hidden Fees</h1>
-                <p>We provide only turnkey home interior solutions for properties located in Bangalore</p>
+                <p>We provide turnkey home interior solutions for properties located in Karnataka</p>
                 
                 <div class="hero-btns">
                     <a href="#quote" class="btn">Get Free Quote</a>
@@ -1651,11 +1662,11 @@
                         <h3>As Original As You</h3>
                     </div>
                     <div class="accolade">
-                        <h3>Best Interior Designers in Bangalore</h3>
+                        <h3>Designing spaces that tell your story</h3>
                     </div>
                     <div class="accolade">
-                        <h3>Best Interior Design Company</h3>
-                        <p>Awarded by Luxury Lifestyle Awards, New York</p>
+                        <h3>Luxury isn't a choice it's our standard</h3>
+                        <!-- <p>Awarded by Luxury Lifestyle Awards, New York</p> -->
                     </div>
                 </div>
             </div>
@@ -1711,7 +1722,27 @@
             </div>
         </div>
     </section>
+    
+    <script>
+        // Toggle header background on scroll
+        (function(){
+            const header = document.querySelector('header');
+            const hero = document.querySelector('.hero');
+            const heroHeight = hero ? hero.offsetHeight : 200;
 
+            function onScroll(){
+                if(window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            }
+
+            // Run on load and on scroll
+            window.addEventListener('scroll', onScroll);
+            document.addEventListener('DOMContentLoaded', onScroll);
+        })();
+    </script>
     <!-- Features Section -->
     <!-- <section class="features">
         <div class="container">
@@ -1758,23 +1789,23 @@
             
             <div class="stats-grid-mobile">
                 <div class="stat-card-mobile fade-in">
-                    <div class="stat-number-mobile">15+</div>
-                    <div class="stat-title-mobile">Years Of Legacy</div>
+                    <div class="stat-number-mobile">45 </div>
+                    <div class="stat-title-mobile">days delivery</div>
                 </div>
                 
                 <div class="stat-card-mobile fade-in">
-                    <div class="stat-number-mobile">650+</div>
-                    <div class="stat-title-mobile">Team Members</div>
+                    <div class="stat-number-mobile">No</div>
+                    <div class="stat-title-mobile">Hidden Cost</div>
                 </div>
                 
                 <div class="stat-card-mobile fade-in">
-                    <div class="stat-number-mobile">6,585+</div>
-                    <div class="stat-title-mobile">Finished Projects</div>
+                    <div class="stat-number-mobile">10 </div>
+                    <div class="stat-title-mobile">Years warranty</div>
                 </div>
                 
                 <div class="stat-card-mobile fade-in">
-                    <div class="stat-number-mobile">6500+</div>
-                    <div class="stat-title-mobile">Happy Clients</div>
+                    <div class="stat-number-mobile">WIDE</div>
+                    <div class="stat-title-mobile">range of premium finish</div>
                 </div>
             </div>
             
@@ -1857,10 +1888,10 @@
                     <div class="service-content">
                         <div class="service-icon">
                             <i class="fas fa-tshirt"></i>
-                        </div>
-                        <h3>Custom Wardrobes</h3>
-                        <p>Smart storage solutions designed to maximize space and keep your belongings organized.</p>
-                        <a href="#" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                         </div>
+                         <h3>Custom Wardrobes</h3>
+                         <p>Smart storage solutions designed to maximize space and keep your belongings organized.</p>
+                         <a href="#" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 
@@ -1994,12 +2025,12 @@
     <!-- Dream Spaces Section -->
     <section class="dream-spaces">
         <div class="container">
-            <div class="dream-header fade-in">
+            <!-- <div class="dream-header fade-in">
                 <h2>Dream Spaces, Real Results</h2>
                 <p>See How We Transform Dreams Into Reality</p>
-            </div>
+            </div> -->
             
-            <div class="projects-grid">
+            <!-- <div class="projects-grid">
                 <div class="project-card fade-in">
                     <div class="project-img">
                         <img src="https://th.bing.com/th/id/R.1d0cd359b06f3b892973fc1204fa0b2b?rik=ZGbNQ7JCWpXr9A&riu=http%3a%2f%2fcdn.home-designing.com%2fwp-content%2fuploads%2f2018%2f04%2fLuxury-terrace.jpg&ehk=BazMh1hmJ73IWHTqbt%2fjYmK3OgGIC4IM2VCbjeypfGY%3d&risl=&pid=ImgRaw&r=0" alt="Embassy Lake Terraces">
@@ -2032,7 +2063,7 @@
                         <a href="#" class="btn btn-outline">View Project</a>
                     </div>
                 </div>
-            </div>
+            </div> -->
             
             <!-- How It Works Section -->
             <div class="how-it-works">
@@ -2105,7 +2136,7 @@
         </div>
     </section> -->
      <!-- Testimonials Section -->
-    <section class="testimonials" id="testimonials">
+    <!-- <section class="testimonials" id="testimonials">
         <div class="container">
             <div class="section-title">
                 <h2>What Our Clients Say</h2>
@@ -2173,7 +2204,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     
 
     <!-- Footer -->
