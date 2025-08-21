@@ -1402,6 +1402,12 @@
                 padding: 20px 0;
             }
 
+            /* Mobile override: when menu uses a white background make links dark so they're readable
+               This overrides the header:not(.scrolled) .nav-menu a { color: #fff; } rule on small screens */
+            header:not(.scrolled) .nav-menu a {
+                color: var(--primary-color);
+            }
+
             .nav-menu.active {
                 left: 0;
             }
@@ -1641,7 +1647,7 @@
         <ul class="nav-menu">
             <li><a href="#">Home</a></li>
             <li><a href="#">About us</a></li>
-            <li><a href="#">Gallery</a></li>
+            <!-- <li><a href="#">Gallery</a></li> -->
             <li><a href="#process">Our Process</a></li>
             <!-- <li><a href="#testimonials">Testimonials</a></li> -->
             <li><a href="#contact">Contact us</a></li>
