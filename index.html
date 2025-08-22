@@ -158,6 +158,39 @@
             width: auto;
             vertical-align: middle;
         }
+        
+        /* WhatsApp floating button */
+        .whatsapp-button {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366; /* WhatsApp green */
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.25);
+            z-index: 2000;
+            transition: transform 0.18s ease, box-shadow 0.18s ease;
+        }
+
+        .whatsapp-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.28);
+        }
+
+        .whatsapp-button i {
+            font-size: 1.5rem;
+        }
+
+        @media (max-width: 480px) {
+            .whatsapp-button { right: 16px; bottom: 16px; width: 54px; height: 54px; }
+            .whatsapp-button i { font-size: 1.3rem; }
+        }
         .nav-menu li {
             margin: 0 15px;
         }
@@ -1647,6 +1680,7 @@
         <ul class="nav-menu">
             <li><a href="#">Home</a></li>
             <li><a href="#">About us</a></li>
+            <li><a href="#">Gallery</a></li>
             <!-- <li><a href="#">Gallery</a></li> -->
             <li><a href="#process">Our Process</a></li>
             <!-- <li><a href="#testimonials">Testimonials</a></li> -->
@@ -2344,5 +2378,9 @@
             });
         });
     </script>
+    <!-- WhatsApp floating button -->
+    <a class="whatsapp-button" href="https://wa.me/917338292409" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 </body>
 </html>
